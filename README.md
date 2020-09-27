@@ -1,4 +1,4 @@
-#Source of libtorrent nuget package
+Source of libtorrent nuget package
 
 There are a couple of ways libtorrent can be acquired. I choose to download and build it via vcpkg.
 The output binaries have been added to the nuget package cource repository. 
