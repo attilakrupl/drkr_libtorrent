@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+    <metadata>
+        <id>drkr_libtorrent</id>
+        <version>1.0.2.1</version>
+        <authors>Attila Krüpl dr.</authors>
+        <owners>Attila Krüpl dr.</owners>
+        <projectUrl>https://github.com/attilakrupl</projectUrl>
+        <license type="expression">Zlib</license>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <releaseNotes>New nuget package including of libtorrent for windows including release and debug versions bot shared and dynamic</releaseNotes>
+        <description>libtorrent developer package</description>
+        <tags>libtorrent bittorrent c++ torrent krüpl</tags>
+    </metadata>
+	<files>
+		<file src="properties\*.props" 				target="build\native\"     				     />
+    	<file src="tools\*.ps1"   	   				target="tools\" 	               			 />
+		<file src="lib\**\*" 		   				target="build\native\lib\"      			 />
+		<file src="bin\**\*" 		   			  	target="build\native\bin\"      			 />
+		<file src="includes\libtorrent\**\*.h"    	target="build\native\includes\libtorrent\"   />
+		<file src="includes\libtorrent\**\*.hpp"  	target="build\native\includes\libtorrent\"   />
+	</files>
+</package>
