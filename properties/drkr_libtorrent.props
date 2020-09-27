@@ -6,12 +6,22 @@
 	  <PreprocessorDefinitions>TORRENT_LINKING_SHARED;TORRENT_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)\lib\win32\$(PlatformTarget)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>torrnet-rasterbar.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)lib\win32\x64\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>torrent-rasterbar.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -file $(MSBuildThisFileDirectory)..\..\tools\install.ps1 -configuration $(Configuration) -platform $(Platform) -searchdir $(SolutionDir)packages -destinationdir $(OutDir)</Command>
       <Message>Copy dlls to  $(OutDir)</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\Intermediate\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\Intermediate\</IntDir>
+  </PropertyGroup>
 </Project>
